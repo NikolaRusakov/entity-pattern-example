@@ -10,6 +10,11 @@ export const loadStudentsSuccess = createAction(
   props<{ students: IStudent[] }>()
 );
 
+export const addStudentsSuccess = createAction(
+  '[Students] Load Students Success',
+  props<{ students: IStudent[] }>()
+);
+
 export const loadStudentsFailure = createAction(
   '[Students] Load Students Failure',
   props<{ error: any }>()

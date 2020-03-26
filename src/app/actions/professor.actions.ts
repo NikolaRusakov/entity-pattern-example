@@ -1,6 +1,6 @@
-import { IProfessor } from './../I-entities';
-import { createAction, props } from '@ngrx/store';
-import { HttpErrorResponse } from '@angular/common/http';
+import {IProfessor} from './../I-entities';
+import {createAction, props} from '@ngrx/store';
+import {HttpErrorResponse} from '@angular/common/http';
 
 export const loadProfessors = createAction(
   '[Professor] Load Professors'
@@ -19,7 +19,7 @@ export const loadProfessorsFailure = createAction(
 export const addMember = createAction(
   '[Professors] Add Professors',
   props<{ member: IProfessor }>()
-)
+);
 
 export const addProfessorSuccess = createAction(
   '[Professors] Add Professors Success',
@@ -31,17 +31,27 @@ export const addProfessorFailure = createAction(
   props<{ error: HttpErrorResponse }>()
 );
 
-export const deleteProfessor = createAction(
-  '[Professors] Delete Professors',
-  props<{ professorId: string }>()
-)
+export const unselectProfessor = createAction(
+  '[Professors] Unselect Professors',
+  props<{ id: string }>()
+);
 
 export const deleteProfessorSuccess = createAction(
   '[Professors] Delete Professors Success',
-  props<{ professorId: string }>(),
-)
+  props<{ id: string }>(),
+);
 
 export const deleteProfessorFailure = createAction(
   '[Professors] Delete Professors Failure',
   props<{ error: HttpErrorResponse }>()
-)
+);
+
+export const addSelectedProfessor = createAction(
+  '[Professors] Add Selected Professor',
+  props<{ id: string }>()
+);
+
+export const deleteSelectedProfessor = createAction(
+  '[Professors] Delete Selected Professor',
+  props<{ id: string }>()
+);

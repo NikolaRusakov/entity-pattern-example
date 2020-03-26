@@ -1,8 +1,13 @@
-import { ISubject } from './../I-entities';
-import { createAction, props } from '@ngrx/store';
+import {ISubject} from './../I-entities';
+import {createAction, props} from '@ngrx/store';
 
 export const loadSubjects = createAction(
   '[Subjects] Load Subjects'
+);
+
+export const addSubjects = createAction(
+  '[Subjects] Load Subjects',
+  props<{ subjects: ISubject[] }>()
 );
 
 export const loadSubjectsSuccess = createAction(

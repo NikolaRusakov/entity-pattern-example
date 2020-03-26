@@ -1,0 +1,48 @@
+.columns {
+  display: flex;
+
+  form {
+    background-color: rgba(200, 200, 200, 0.2);
+  }
+}
+
+.selection-section {
+  background-color: rgba(200, 200, 200, 0.2);
+  flex: 1 0 67%;
+  height: auto;
+
+  form {
+    height: 100%;
+  }
+}
+
+.example-card {
+  margin: 12px 0;
+}
+
+.section {
+  height: 85%;
+  display: flex;
+  flex-direction: row;
+}
+
+.article {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.expansion-panels {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  flex: 1 0 33%;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+}
