@@ -49,7 +49,7 @@ import {environment} from '../environments/environment';
 import {EffectsModule} from '@ngrx/effects';
 import {AppEffects} from './app.effects';
 import {StoreModule} from '@ngrx/store';
-import {reducers, metaReducers} from './reducers';
+import {reducerProvider, reducers, REDUCERS_TOKEN} from './reducers';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LetDirective} from './let.directive';
@@ -107,8 +107,7 @@ import {LetDirective} from './let.directive';
     AppRoutingModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([AppEffects]),
-    StoreModule.forRoot(reducers, {
-      metaReducers,
+    StoreModule.forRoot(REDUCERS_TOKEN, {
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
@@ -119,7 +118,7 @@ import {LetDirective} from './let.directive';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [reducerProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {
